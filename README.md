@@ -1,2 +1,2 @@
-# admin-dash-board
+# admin-dashboard
 my grid project
