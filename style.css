@@ -15,7 +15,7 @@
 .main-page {
   height: 100dvh;
   display: grid;
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: 1fr 7fr;
 }
 .header {
   display: flex;
@@ -28,11 +28,7 @@
   box-shadow: 0 10px 10px rgba(94, 94, 94, 0.5);
   flex-wrap: wrap;
 }
-.sidebar {
-  background-color: aqua;
-  grid-row-start: 1;
-  grid-row-end: 3;
-}
+
 .profile {
   display: flex;
   align-items: center;
@@ -117,11 +113,71 @@ input {
   border-radius: 12px;
   margin-top: 15px;
 }
+.announcements-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.big-announcements {
+  border: 2px solid black;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border-radius: 5px;
+  width: 80%;
+  background-color: var(--cards-stats);
+}
 .trending {
   background-color: var(--cards-container);
   border-radius: 12px;
-
+  display: flex;
+  flex-direction: column;
   grid-row: 3/5;
+  justify-content: space-around;
+  align-items: center;
+}
+.winner-profile {
+  width: 120px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  background-color: var(--profile-img);
+  border-radius: 50%;
+  overflow: hidden;
+
+  align-items: center;
+  justify-content: center;
+}
+.winner-profile img {
+  height: 80%;
+  width: 80%;
+}
+.the-winner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+.hou-much {
+  font-weight: bold;
+  font-size: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 3px solid black;
+  justify-content: space-around;
+  border-radius: 12px;
+  width: 200px;
+  height: 150px;
+  text-align: center;
+  background-color: var(--cards-stats);
+}
+.hou-much h2 {
+  font-size: 3.5rem;
+  font-weight: bold;
 }
 .top-prfomence {
   padding-top: 30px;
@@ -131,7 +187,7 @@ input {
   align-items: center;
   justify-content: center;
   gap: 50px;
-
+  padding-left: 20px;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
@@ -180,4 +236,56 @@ h4 {
   width: 90%;
   height: 100%;
   border-radius: 15px;
+}
+.sidebar {
+  background-color: white;
+  position: fixed; /* Add this */
+  top: 0; /* Add this */
+  height: 100vh; /* Add this */
+  width: 12.5%;
+  display: flex;
+  flex-direction: column;
+  z-index: 2; /* Ensure it's above the content */
+}
+.logo {
+  display: flex;
+  height: 15%;
+}
+.sidebar img {
+  height: 30px;
+}
+.sidebar-itmes {
+  display: flex;
+  gap: 20px;
+  padding-left: 20px;
+}
+.sidebar-contect {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 40%;
+
+  border-top: 1px solid black;
+}
+.sidebar-settings {
+  display: flex;
+  flex-direction: column;
+  height: 25%;
+  justify-content: space-around;
+
+  gap: 1 0px;
+  border-top: 1px solid black;
+}
+.sidebar-ohter {
+  display: flex;
+  gap: 10px;
+  text-align: center;
+  height: 10%;
+  justify-content: space-around;
+
+  flex-direction: column;
+  border-top: 1px solid black;
+}
+#logout {
+  padding-left: 25px;
 }
