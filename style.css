@@ -11,6 +11,9 @@
   --cards-container: #f7e8e8;
   --cards-stats: rgb(255, 255, 255);
   --header: rgb(227, 218, 218);
+  --buttons-color: #f28482;
+  --hover-buttons-color: #f28482b9;
+  --gold-color: rgb(252, 164, 0);
 }
 body {
   font-family: "Poppins", sans-serif;
@@ -35,6 +38,7 @@ body {
   width: 120%; /* Ensure the image fills the circular container */
   height: 120%;
   object-fit: cover; /* Maintain the image's aspect ratio and cover the container */
+  cursor: pointer;
 }
 .user-image {
   display: flex;
@@ -55,6 +59,7 @@ body {
 }
 #plus {
   height: 30px;
+  cursor: pointer;
 }
 .profile-image {
   display: flex;
@@ -94,23 +99,34 @@ body {
 input {
   min-width: 200px;
   width: 100%;
+  max-width: 400px;
 }
 .my-profile {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 20px;
 }
 .profile-image {
   width: 80px;
   height: auto;
+  cursor: pointer;
 }
 
 .icones > img {
   height: 30px;
+  transition: all 0.3s ease; /* Smooth transition for size and background change */
 }
 .icones {
   display: flex;
   gap: 10px;
+  cursor: pointer;
+}
+.icones img:hover {
+  height: 33px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 20%;
+  padding: 5px;
+  object-fit: cover; /* Ensures the image covers the area without stretching */
 }
 .main-contect {
   display: grid;
@@ -145,6 +161,7 @@ input {
   border-radius: 5px;
   width: 80%;
   background-color: var(--cards-stats);
+  cursor: pointer;
 }
 .trending {
   background-color: var(--cards-container);
@@ -163,7 +180,7 @@ input {
   background-color: var(--profile-img);
   border-radius: 50%;
   overflow: hidden;
-
+  cursor: pointer;
   align-items: center;
   justify-content: center;
 }
@@ -178,12 +195,16 @@ input {
   gap: 20px;
   font-weight: bold;
   font-size: 1.6rem;
+  text-align: center;
+  transition: color 0.4s ease;
+  cursor: pointer;
 }
 .hou-much {
   font-weight: bold;
   font-size: 1.6rem;
   display: flex;
   flex-direction: column;
+  transition: all 0.5s ease-in ease-out;
   align-items: center;
   border: 3px solid black;
   justify-content: space-around;
@@ -192,34 +213,67 @@ input {
   height: 250px;
   text-align: center;
   background-color: var(--cards-stats);
+  cursor: pointer;
+  transition: color 0.4s ease;
+  transition: box-shadow 0.4s ease; /* delay of 0.2 seconds */
 }
 .hou-much h2 {
   font-size: 3.5rem;
   font-weight: bold;
 }
+.hou-much:hover {
+  color: var(--gold-color);
+  border-color: var(--gold-color);
+  box-shadow: 0px 0px 30px 10px rgb(252, 164, 0, 0.5);
+  transition: all 0.4s ease; /* Smooth transition for size and background change */
+}
+.hou-much:hover .the-winner {
+  color: var(--gold-color);
+}
 .top-prfomence {
   padding-top: 30px;
   padding-bottom: 30px;
-  grid-column: 1/3;
-  display: grid;
-  align-items: center;
+  grid-column: 1 / -1; /* Span across all columns of the grid */
+  display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   gap: 50px;
   padding-left: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  /* Remove grid-template-rows: 1fr 1fr; as it's not necessary */
+}
+.cards-stats-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* Allows items to wrap to new line */
+  gap: 50px;
+  flex-grow: auto;
 }
 
 .cards-stats {
+  flex-grow: 1; /* Enable flex growth */
+  flex-basis: 235px; /* Base size before growing */
+  max-width: 315px; /* Maximum size limit */
+  transition: all 0.4s ease; /* Smooth transition for size and background change */
+
   font-size: 2.2rem;
   display: flex;
   flex-direction: column;
   border: 3px solid rgb(46, 45, 45);
-  border-radius: 15%;
+  border-radius: 9px;
   align-items: center;
-  height: 150px;
-  max-width: 235px;
+  cursor: pointer;
+  height: 200px;
+  min-width: 260px;
   justify-content: space-evenly;
   background-color: var(--cards-stats);
+  position: relative;
+}
+.cards-stats:hover {
+  color: rgb(0, 120, 190);
+  border-color: rgb(0, 120, 190);
 }
 .cards-continer {
   background-color: var(--cards-container);
@@ -270,15 +324,16 @@ h4 {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 10vh;
+  height: 95px;
+  cursor: pointer;
 }
 
 .sidebar img {
-  height: 30px;
+  height: 20px;
 }
 #logo-img {
-  height: 150px;
-  padding-top: 40px;
+  height: 125px;
+  padding-top: 0px;
 }
 
 .sidebar-itmes {
@@ -291,11 +346,11 @@ h4 {
 .sidebar-itmes:hover {
   background-color: rgb(247, 219, 219);
   border-left: 10px solid rgb(0, 0, 0);
-  color: rgb(252, 164, 0);
+  color: var(--gold-color);
 }
 
 .sidebar-itmes:hover .icon-path {
-  fill: rgb(252, 164, 0); /* Change to the desired color */
+  fill: var(--gold-color); /* Change to the desired color */
 }
 
 .sidebar-contect {
@@ -331,7 +386,26 @@ h4 {
   justify-content: space-evenly;
   height: 80%;
 }
-
+.search-input {
+  font-size: large;
+  border-radius: 12px;
+}
+.cards-buttons {
+  font-size: 1.2rem;
+  border-radius: 7px;
+  height: 40px;
+  width: 70px;
+  background-color: var(--buttons-color);
+  color: white;
+  margin: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth transition for size and background change */
+}
+.cards-buttons:hover {
+  height: 50px;
+  width: 80px;
+  background-color: var(--hover-buttons-color);
+}
 @media screen and (min-width: 1023px) and (max-width: 1440px) {
   .sidebar-itmes h3 {
     font-size: 0.9rem;
@@ -344,5 +418,9 @@ h4 {
   }
   .header {
     padding-left: 30px;
+  }
+  .trending {
+    justify-content: start;
+    gap: 80px;
   }
 }

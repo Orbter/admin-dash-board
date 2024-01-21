@@ -10,6 +10,8 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+    <script src="script.js" defer></script>
+
     <title>Admin Dashboard</title>
   </head>
   <body>
@@ -602,7 +604,11 @@
             </div>
           </div>
           <div class="search">
-            <img src="/img/search.svg" /><input type="search" />
+            <img src="/img/search.svg" /><input
+              type="search"
+              placeholder="search"
+              class="search-input"
+            />
           </div>
 
           <div class="my-profile">
@@ -613,27 +619,34 @@
             <div class="profile-image">
               <img src="/profile-backround-without/guy-with-glasses.svg" />
             </div>
+            <div class="header-buttons">
+              <button class="cards-buttons">New</button>
+              <button class="cards-buttons">Upload</button>
+              <button class="cards-buttons">Share</button>
+            </div>
           </div>
         </div>
         <div class="top-prfomence">
-          <div class="cards-stats">
-            <p>finished</p>
-            <p>29</p>
-          </div>
-          <div class="cards-stats">
-            <p>unfinish</p>
-            <p>38</p>
-          </div>
-          <div class="cards-stats">
-            <p>working on</p>
-            <p>4</p>
-          </div>
-          <div class="cards-stats">
-            <p>dropped</p>
-            <p>7</p>
+          <div class="overview"><h1>Overview</h1></div>
+          <div class="cards-stats-container">
+            <div class="cards-stats border-animation">
+              <p>finished</p>
+              <p>29</p>
+            </div>
+            <div class="cards-stats border-animation">
+              <p>unfinish</p>
+              <p>38</p>
+            </div>
+            <div class="cards-stats border-animation">
+              <p>working on</p>
+              <p>4</p>
+            </div>
+            <div class="cards-stats border-animation">
+              <p>dropped</p>
+              <p>7</p>
+            </div>
           </div>
         </div>
-
         <div class="cards-continer">
           <div class="cards">
             <h4>improve design</h4>
