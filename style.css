@@ -12,6 +12,9 @@
   --cards-stats: rgb(255, 255, 255);
   --header: rgb(227, 218, 218);
 }
+body {
+  font-family: "Poppins", sans-serif;
+}
 .main-page {
   height: 100dvh;
   display: grid;
@@ -28,7 +31,22 @@
   box-shadow: 0 10px 10px rgba(94, 94, 94, 0.5);
   flex-wrap: wrap;
 }
-
+.user-image img {
+  width: 120%; /* Ensure the image fills the circular container */
+  height: 120%;
+  object-fit: cover; /* Maintain the image's aspect ratio and cover the container */
+}
+.user-image {
+  display: flex;
+  align-items: center;
+  background-color: var(--profile-img);
+  border-radius: 50%;
+  overflow: hidden;
+  width: 80px;
+  height: 80px;
+  align-items: center;
+  justify-content: center;
+}
 .profile {
   display: flex;
   align-items: center;
@@ -170,8 +188,8 @@ input {
   border: 3px solid black;
   justify-content: space-around;
   border-radius: 12px;
-  width: 200px;
-  height: 150px;
+  width: 300px;
+  height: 250px;
   text-align: center;
   background-color: var(--cards-stats);
 }
@@ -218,7 +236,7 @@ input {
 .cards {
   display: flex;
   flex-direction: column;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   min-width: 222px;
   max-width: 340px;
   min-height: 222px;
@@ -239,39 +257,57 @@ h4 {
 }
 .sidebar {
   background-color: white;
-  position: fixed; /* Add this */
-  top: 0; /* Add this */
-  height: 100vh; /* Add this */
+  position: fixed;
+  top: 0;
+  height: 100vh;
   width: 12.5%;
+  min-width: 165px;
   display: flex;
   flex-direction: column;
-  z-index: 2; /* Ensure it's above the content */
+  z-index: 2;
 }
 .logo {
   display: flex;
-  height: 15%;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
 }
+
 .sidebar img {
   height: 30px;
 }
+#logo-img {
+  height: 150px;
+  padding-top: 40px;
+}
+
 .sidebar-itmes {
   display: flex;
   gap: 20px;
+  padding: 10px;
   padding-left: 20px;
+  cursor: pointer;
 }
+.sidebar-itmes:hover {
+  background-color: rgb(247, 219, 219);
+  border-left: 10px solid rgb(0, 0, 0);
+  color: rgb(252, 164, 0);
+}
+
+.sidebar-itmes:hover .icon-path {
+  fill: rgb(252, 164, 0); /* Change to the desired color */
+}
+
 .sidebar-contect {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  height: 40%;
-
+  gap: 30px;
   border-top: 1px solid black;
 }
 .sidebar-settings {
   display: flex;
   flex-direction: column;
-  height: 25%;
-  justify-content: space-around;
+  gap: 30px;
 
   gap: 1 0px;
   border-top: 1px solid black;
@@ -281,11 +317,32 @@ h4 {
   gap: 10px;
   text-align: center;
   height: 10%;
-  justify-content: space-around;
+  gap: 30px;
 
   flex-direction: column;
   border-top: 1px solid black;
 }
 #logout {
   padding-left: 25px;
+}
+.sidebar-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 80%;
+}
+
+@media screen and (min-width: 1023px) and (max-width: 1440px) {
+  .sidebar-itmes h3 {
+    font-size: 0.9rem;
+  }
+  .cards {
+    font-size: 1rem;
+  }
+  .top-prfomence {
+    padding-left: 30px;
+  }
+  .header {
+    padding-left: 30px;
+  }
 }
