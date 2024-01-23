@@ -519,6 +519,7 @@ h4 {
   }
   .cards {
     font-size: 1rem;
+    max-width: 400px;
   }
   .main-page {
     grid-template-columns: 1fr;
@@ -530,19 +531,10 @@ h4 {
     gap: 30px;
     /* Other styles */
   }
-
-  /* Assign each card to a specific row */
-  .cards:nth-child(1) {
-    grid-row: 1;
+  .cards-contect {
+    display: flex;
+    justify-content: center; /* Horizontally center the child elements */
+    flex-wrap: wrap; /* Allow the cards to wrap */
+    gap: 30px; /* Maintain the gap between cards */
   }
-  .cards:nth-child(2) {
-    grid-row: 2;
-  }
-  .cards:nth-child(3) {
-    grid-row: 3;
-  }
-  .cards:nth-child(4) {
-    grid-row: 4;
-  }
-  /* Continue for as many cards as you have */
 }
