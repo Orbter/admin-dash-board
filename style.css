@@ -287,7 +287,9 @@ input {
   margin-right: 15px;
   border-radius: 12px;
 }
-
+.sidebar-close {
+  display: none;
+}
 .missions {
   grid-column: 1 / -1; /* Span across both columns */
   grid-row: 1;
@@ -418,6 +420,9 @@ h4 {
   width: 80px;
   background-color: var(--hover-buttons-color);
 }
+.sidebar-pop {
+  cursor: pointer;
+}
 @media screen and (min-width: 1025px) and (max-width: 1440px) {
   .sidebar-itmes h3 {
     font-size: 0.9rem;
@@ -437,9 +442,6 @@ h4 {
   }
 }
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  .sidebar {
-    display: none;
-  }
   .header {
     grid-column: 1/3;
   }
@@ -448,7 +450,7 @@ h4 {
   }
   .sidebar-pop > img {
     height: 40px;
-    margin: 20px;
+    padding: 20px;
   }
   .cards-stats {
     flex-basis: 100%;
@@ -479,10 +481,40 @@ h4 {
   .main-page {
     grid-template-columns: 1fr;
   }
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%; /* Hide it off-screen */
+    width: 12.5%;
+    min-width: 200px;
+    height: 100vh;
+    transition: left 0.6s ease; /* Apply transition to 'left' property */
+  }
+  .sidebar-close {
+    display: block;
+    width: 40px;
+    height: 40px;
+  }
+  .sidebar-close > img {
+    width: 30px;
+    height: 30px;
+  }
+  .sidebar-visible {
+    left: 0; /* Bring it into view */
+  }
 }
 @media screen and (max-width: 767px) {
+  .sidebar-close {
+    display: block;
+  }
   .sidebar {
-    display: none;
+    position: fixed;
+    top: 0;
+    left: -100%; /* Hide it off-screen */
+    width: 12.5%;
+    min-width: 200px;
+    height: 100vh;
+    transition: left 0.6s ease; /* Apply transition to 'left' property */
   }
   .header {
     grid-column: 1/3;
@@ -492,7 +524,7 @@ h4 {
   }
   .sidebar-pop > img {
     height: 40px;
-    margin: 20px;
+    padding: 20px;
   }
   .cards-stats {
     flex-basis: 100%;
@@ -536,5 +568,8 @@ h4 {
     justify-content: center; /* Horizontally center the child elements */
     flex-wrap: wrap; /* Allow the cards to wrap */
     gap: 30px; /* Maintain the gap between cards */
+  }
+  .sidebar-visible {
+    left: 0; /* Bring it into view */
   }
 }

@@ -24,3 +24,12 @@ theWinner.addEventListener("mouseout", function () {
   houMuch.style.borderColor = "";
   houMuch.style.boxShadow = "";
 });
+const sidebarPop = document.querySelector(".sidebar-pop");
+const sidebar = document.querySelector(".sidebar");
+const sidbarClose = document.querySelector(".sidebar-close");
+sidebarPop.addEventListener("click", function () {
+  sidebar.classList.add("sidebar-visible");
+});
+sidbarClose.addEventListener("click", function () {
+  sidebar.classList.remove("sidebar-visible");
+});
